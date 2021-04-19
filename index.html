@@ -23,21 +23,25 @@
 
         .oreo {
             height: 250px;
-            width: 252px;
+            width: 250px;
             background-image: url(oreo.png);
             background-repeat: no-repeat;
             background-position: left;
-            animation: rotate 1s steps(21) 1 forwards,
+            animation: rotate 750ms steps(30) 1 forwards,
                 float 4s infinite 1s linear alternate;
         }
 
         @keyframes rotate {
             0% {
-                background-position: left;
+                filter: blur(0px);
+            }
+
+            70% {
+                filter: blur(0px);
             }
 
             100% {
-                background-position-x: -5292px;
+                background-position-x: -7560px;
                 filter: blur(4px);
             }
         }
