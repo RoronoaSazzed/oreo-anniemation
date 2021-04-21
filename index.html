@@ -22,27 +22,18 @@
         }
 
         .oreo {
-            height: 250px;
+            height: 230px;
             width: 250px;
             background-image: url(oreo.png);
             background-repeat: no-repeat;
             background-position: left;
-            animation: rotate 750ms steps(30) 1 forwards,
+            animation: rotateOreo 750ms steps(29) 1 forwards,
                 float 4s infinite 1s linear alternate;
         }
 
-        @keyframes rotate {
-            0% {
-                filter: blur(0px);
-            }
-
-            70% {
-                filter: blur(0px);
-            }
-
+        @keyframes rotateOreo {
             100% {
-                background-position-x: -7560px;
-                filter: blur(4px);
+                background-position-x: -7250px;
             }
         }
 
@@ -59,12 +50,139 @@
                 transform: translateY(4%);
             }
         }
+
+        .peanut {
+            height: 239px;
+            width: 250px;
+            background-image: url(peanut.png);
+            background-repeat: no-repeat;
+            background-position: left;
+            animation: rotatePeanut 750ms steps(30) 1 forwards,
+                float 4s infinite 1s linear alternate;
+        }
+
+        @keyframes rotatePeanut {
+            100% {
+                background-position-x: -7500px;
+            }
+        }
+
+        .cake {
+            height: 232px;
+            width: 250px;
+            background-image: url(cake.png);
+            background-repeat: no-repeat;
+            background-position: left;
+            animation: rotateCake 750ms steps(30) 1 forwards,
+                float 4s infinite 1s linear alternate;
+        }
+
+        @keyframes rotateCake {
+            100% {
+                background-position-x: -7500px;
+            }
+        }
+
+        .pink {
+            height: 247px;
+            width: 250px;
+            background-image: url(pink.png);
+            background-repeat: no-repeat;
+            background-position: left;
+            animation: rotatePink 750ms steps(29) 1 forwards,
+                float 4s infinite 1s linear alternate;
+        }
+
+        @keyframes rotatePink {
+            0% {
+                filter: blur(0px);
+            }
+
+            70% {
+                filter: blur(0px);
+            }
+
+            100% {
+                background-position-x: -7250px;
+                filter: blur(3px);
+            }
+        }
+
+        .popcorn {
+            height: 232px;
+            width: 250px;
+            background-image: url(popcorn.png);
+            background-repeat: no-repeat;
+            background-position: left;
+            animation: rotatePopcorn 750ms steps(29) 1 forwards,
+                float 4s infinite 1s linear alternate;
+        }
+
+        @keyframes rotatePopcorn {
+            0% {
+                filter: blur(0px);
+            }
+
+            70% {
+                filter: blur(0px);
+            }
+
+            100% {
+                background-position-x: -7250px;
+                filter: blur(3px);
+            }
+        }
+
+        .white {
+            height: 232px;
+            width: 250px;
+            background-image: url(white.png);
+            background-repeat: no-repeat;
+            background-position: left;
+            animation: rotateWhite 750ms steps(30) 1 forwards,
+                float 4s infinite 1s linear alternate;
+        }
+
+        @keyframes rotateWhite {
+            0% {
+                filter: blur(0px);
+            }
+
+            70% {
+                filter: blur(0px);
+            }
+
+            100% {
+                background-position-x: -7500px;
+                filter: blur(3px);
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="screen">
         <div class="oreo">
+
+        </div>
+
+        <div class="peanut">
+
+        </div>
+
+        <div class="cake">
+
+        </div>
+
+        <div class="pink">
+
+        </div>
+
+        <div class="popcorn">
+
+        </div>
+
+        <div class="white">
 
         </div>
     </div>
