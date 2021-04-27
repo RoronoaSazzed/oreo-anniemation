@@ -21,90 +21,7 @@
             position: relative;
         }
 
-        .oreo,
-        /* .peanut, */
-        .pink,
-        .popcorn,
-        .white,
-        .cake {
-            display: inline-block;
-            position: absolute;
-            z-index: 3;
-            border-radius: 50%;
-        }
-
-        .white {
-            right: 15%;
-            top: -15%;
-        }
-
-        .popcorn {
-            bottom: 0%;
-            left: 20%;
-        }
-
-        .pink {
-            top: -15%;
-            left: 10%;
-        }
-
-        .cake {
-            right: 10%;
-            bottom: 5%;
-        }
-
-        .peanut {
-            top: 35%;
-            left: 0%;
-        }
-
-        .oreo {
-            right: -5%;
-            top: 15%;
-        }
-
-
-
-        .oreo {
-            height: 291px;
-            width: 316px;
-            background-image: url(http://kjeks.de/wp-content/uploads/2021/04/oreo.png);
-            background-repeat: no-repeat;
-            background-position: left;
-            -webkit-animation: rotateOreo 750ms steps(29) 1 forwards,
-                float 4s infinite 2s linear alternate;
-            animation: rotateOreo 750ms steps(29) 1 forwards,
-                float 4s infinite 2s linear alternate;
-        }
-
-        @-webkit-keyframes rotateOreo {
-            100% {
-                background-position-x: -9164px;
-            }
-        }
-
-        @keyframes rotateOreo {
-            100% {
-                background-position-x: -9164px;
-            }
-        }
-
-        /* @-webkit-keyframes float {
-            0% {
-                -webkit-transform: translateY(0%);
-                        transform: translateY(0%);
-            }
-
-            50% {
-                -webkit-transform: translateY(-4%);
-                        transform: translateY(-4%);
-            }
-
-            100% {
-                -webkit-transform: translateY(4%);
-                        transform: translateY(4%);
-            }
-        } */
+        /* Float Animation */
 
         @keyframes float {
             0% {
@@ -123,19 +40,75 @@
             }
         }
 
-        .appearPeanut {
+        /* Common Wrapping Code for the elements to appear + Floating */
+
+        .appearOreo,
+        .appearPeanut,
+        .appearPink,
+        .appearPopcorn,
+        .appearWhite,
+        .appearCake {
             display: inline-block;
             position: absolute;
             z-index: 3;
+            border-radius: 50%;
+        }
+
+        /* Pink */
+
+        .appearPink {
+            top: -15%;
+            left: 10%;
+            animation: appearpink 1.5s ease-in-out 1 forwards,
+                float 4s infinite 2s linear alternate;
+        }
+
+        @keyframes appearpink {
+            0% {
+                transform: translate(-150px, -300px);
+            }
+
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+
+        .pink {
+            height: 291px;
+            width: 294px;
+            background-image: url(http://kjeks.de/wp-content/uploads/2021/04/pink.png);
+            background-repeat: no-repeat;
+            background-position: left;
+            animation: rotatePink 750ms .75s steps(29) 1 forwards;
+        }
+
+        @keyframes rotatePink {
+            0% {
+                filter: blur(0px);
+            }
+
+            70% {
+                filter: blur(0px);
+            }
+
+            100% {
+                background-position-x: -8526px;
+                filter: blur(1px);
+            }
+        }
+
+        /* Peanut */
+
+        .appearPeanut {
             top: 35%;
             left: 0%;
             animation: appearpeanut 1.5s ease-in-out 1 forwards,
-                float 4s infinite 2s linear alternate;
+                float 4s infinite 3.5s linear alternate;
         }
 
         @keyframes appearpeanut {
             0% {
-                transform: translate(-300px, -25px);
+                transform: translate(-300px, -150px);
             }
 
             100% {
@@ -149,15 +122,7 @@
             background-image: url(http://kjeks.de/wp-content/uploads/2021/04/peanut.png);
             background-repeat: no-repeat;
             background-position: left;
-            -webkit-animation: rotatePeanut 750ms .5s steps(30) 1 forwards,
-                float 4s infinite 2s linear alternate;
-            animation: rotatePeanut 750ms .5s steps(30) 1 forwards;
-        }
-
-        @-webkit-keyframes rotatePeanut {
-            100% {
-                background-position-x: -7350px;
-            }
+            animation: rotatePeanut 750ms .75s steps(30) 1 forwards;
         }
 
         @keyframes rotatePeanut {
@@ -166,83 +131,25 @@
             }
         }
 
-        .cake {
-            height: 262px;
-            width: 282px;
-            background-image: url(http://kjeks.de/wp-content/uploads/2021/04/cake.png);
-            background-repeat: no-repeat;
-            background-position: left;
-            -webkit-animation: rotateCake 750ms steps(30) 1 forwards,
-                float 4s infinite 1.5s linear alternate;
-            animation: rotateCake 750ms steps(30) 1 forwards,
-                float 4s infinite 1.5s linear alternate;
+        /* Popcorn */
+
+        .appearPopcorn {
+            bottom: 0%;
+            left: 20%;
+            animation: appearpopcorn 1.5s ease-in-out 1 forwards,
+                float 4s infinite 5s linear alternate;
         }
 
-        @-webkit-keyframes rotateCake {
-            100% {
-                background-position-x: -8460px;
-            }
-        }
-
-        @keyframes rotateCake {
-            100% {
-                background-position-x: -8460px;
-            }
-        }
-
-        .pink {
-            height: 291px;
-            width: 294px;
-            background-image: url(http://kjeks.de/wp-content/uploads/2021/04/pink.png);
-            background-repeat: no-repeat;
-            background-position: left;
-            -webkit-animation: rotatePink 750ms steps(29) 1 forwards,
-                float 4s infinite 2.5s linear alternate;
-            animation: rotatePink 750ms steps(29) 1 forwards,
-                float 4s infinite 2.5s linear alternate;
-        }
-
-        @-webkit-keyframes rotatePink {
+        @keyframes appearpopcorn {
             0% {
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                -webkit-filter: blur(0px);
-                filter: blur(0px);
-            }
-
-            70% {
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                -webkit-filter: blur(0px);
-                filter: blur(0px);
+                transform: translate(-150px, 300px);
             }
 
             100% {
-                background-position-x: -8526px;
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="1" /></filter></svg>#filter');
-                -webkit-filter: blur(1px);
-                filter: blur(1px);
+                transform: translate(0px, 0px);
             }
         }
 
-        @keyframes rotatePink {
-            0% {
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                -webkit-filter: blur(0px);
-                filter: blur(0px);
-            }
-
-            70% {
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                -webkit-filter: blur(0px);
-                filter: blur(0px);
-            }
-
-            100% {
-                background-position-x: -8526px;
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="1" /></filter></svg>#filter');
-                -webkit-filter: blur(1px);
-                filter: blur(1px);
-            }
-        }
 
         .popcorn {
             height: 190px;
@@ -250,51 +157,40 @@
             background-image: url(http://kjeks.de/wp-content/uploads/2021/04/popcorn.png);
             background-repeat: no-repeat;
             background-position: left;
-            -webkit-animation: rotatePopcorn 750ms steps(29) 1 forwards,
-                float 4s infinite 3s linear alternate;
-            animation: rotatePopcorn 750ms steps(29) 1 forwards,
-                float 4s infinite 3s linear alternate;
-        }
-
-        @-webkit-keyframes rotatePopcorn {
-            0% {
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                -webkit-filter: blur(0px);
-                filter: blur(0px);
-            }
-
-            70% {
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                -webkit-filter: blur(0px);
-                filter: blur(0px);
-            }
-
-            100% {
-                background-position-x: -5945px;
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
-                -webkit-filter: blur(3px);
-                filter: blur(3px);
-            }
+            animation: rotatePopcorn 750ms .75s steps(29) 1 forwards;
         }
 
         @keyframes rotatePopcorn {
             0% {
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                -webkit-filter: blur(0px);
                 filter: blur(0px);
             }
 
             70% {
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                -webkit-filter: blur(0px);
                 filter: blur(0px);
             }
 
             100% {
                 background-position-x: -5945px;
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
-                -webkit-filter: blur(3px);
                 filter: blur(3px);
+            }
+        }
+
+        /* White */
+
+        .appearWhite {
+            right: 15%;
+            top: -15%;
+            animation: appearwhite 1.5s ease-in-out 1 forwards,
+                float 4s infinite 4s linear alternate;
+        }
+
+        @keyframes appearwhite {
+            0% {
+                transform: translate(150px, -300px);
+            }
+
+            100% {
+                transform: translate(0px, 0px);
             }
         }
 
@@ -304,174 +200,97 @@
             background-image: url(http://kjeks.de/wp-content/uploads/2021/04/white.png);
             background-repeat: no-repeat;
             background-position: left;
-            -webkit-animation: rotateWhite 750ms steps(30) 1 forwards,
-                float 4s infinite 1.2s linear alternate;
-            animation: rotateWhite 750ms steps(30) 1 forwards,
-                float 4s infinite 1.2s linear alternate;
-        }
-
-        @-webkit-keyframes rotateWhite {
-            0% {
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                -webkit-filter: blur(0px);
-                filter: blur(0px);
-            }
-
-            70% {
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                -webkit-filter: blur(0px);
-                filter: blur(0px);
-            }
-
-            100% {
-                background-position-x: -9510px;
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
-                -webkit-filter: blur(3px);
-                filter: blur(3px);
-            }
+            animation: rotateWhite 750ms .75s steps(30) 1 forwards;
         }
 
         @keyframes rotateWhite {
             0% {
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                -webkit-filter: blur(0px);
                 filter: blur(0px);
             }
 
             70% {
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                -webkit-filter: blur(0px);
                 filter: blur(0px);
             }
 
             100% {
                 background-position-x: -9510px;
-                filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
-                -webkit-filter: blur(3px);
                 filter: blur(3px);
             }
         }
 
+        /* Oreo */
+
+        .appearOreo {
+            right: -5%;
+            top: 15%;
+            animation: appearoreo 1.5s ease-in-out 1 forwards,
+                float 4s infinite 3.5s linear alternate;
+        }
+
+        @keyframes appearoreo {
+            0% {
+                transform: translate(300px, -300px);
+            }
+
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+
+        .oreo {
+            height: 291px;
+            width: 316px;
+            background-image: url(http://kjeks.de/wp-content/uploads/2021/04/oreo.png);
+            background-repeat: no-repeat;
+            background-position: left;
+            animation: rotateOreo 750ms .75s steps(29) 1 forwards;
+        }
+
+        @keyframes rotateOreo {
+            100% {
+                background-position-x: -9164px;
+            }
+        }
+
+        /* Cake */
+
+        .appearCake {
+            right: 10%;
+            bottom: 5%;
+            animation: appearcake 1.5s ease-in-out 1 forwards,
+                float 4s infinite 3s linear alternate;
+        }
+
+        @keyframes appearcake {
+            0% {
+                transform: translate(300px, 300px);
+            }
+
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+
+        .cake {
+            height: 262px;
+            width: 282px;
+            background-image: url(http://kjeks.de/wp-content/uploads/2021/04/cake.png);
+            background-repeat: no-repeat;
+            background-position: left;
+            animation: rotateCake 750ms .75s steps(30) 1 forwards;
+        }
+
+        @keyframes rotateCake {
+            100% {
+                background-position-x: -8460px;
+            }
+        }
+
         @media (min-width: 320px) and (max-width: 600px) {
-            .white {
-                right: -5%;
-                top: -5%;
-            }
 
-            .white {
-                height: 194px;
-                width: 200px;
-                background-image: url(http://kjeks.de/wp-content/uploads/2021/04/whiteM.png);
-                background-repeat: no-repeat;
-                background-position: left;
-                -webkit-animation: rotateWhite 750ms steps(30) 1 forwards,
-                    float 4s infinite 1.2s linear alternate;
-                animation: rotateWhite 750ms steps(30) 1 forwards,
-                    float 4s infinite 1.2s linear alternate;
-            }
+            /* Pink */
 
-            @-webkit-keyframes rotateWhite {
-                0% {
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                    -webkit-filter: blur(0px);
-                    filter: blur(0px);
-                }
-
-                70% {
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                    -webkit-filter: blur(0px);
-                    filter: blur(0px);
-                }
-
-                100% {
-                    background-position-x: -6000px;
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
-                    -webkit-filter: blur(3px);
-                    filter: blur(3px);
-                }
-            }
-
-            @keyframes rotateWhite {
-                0% {
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                    -webkit-filter: blur(0px);
-                    filter: blur(0px);
-                }
-
-                70% {
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                    -webkit-filter: blur(0px);
-                    filter: blur(0px);
-                }
-
-                100% {
-                    background-position-x: -6000px;
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
-                    -webkit-filter: blur(3px);
-                    filter: blur(3px);
-                }
-            }
-
-            .popcorn {
-                bottom: -5%;
-                left: 65%;
-            }
-
-            .popcorn {
-                height: 186px;
-                width: 200px;
-                background-image: url(http://kjeks.de/wp-content/uploads/2021/04/popcornM.png);
-                background-repeat: no-repeat;
-                background-position: left;
-                -webkit-animation: rotatePopcorn 750ms steps(29) 1 forwards,
-                    float 4s infinite 3s linear alternate;
-                animation: rotatePopcorn 750ms steps(29) 1 forwards,
-                    float 4s infinite 3s linear alternate;
-            }
-
-            @-webkit-keyframes rotatePopcorn {
-                0% {
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                    -webkit-filter: blur(0px);
-                    filter: blur(0px);
-                }
-
-                70% {
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                    -webkit-filter: blur(0px);
-                    filter: blur(0px);
-                }
-
-                100% {
-                    background-position-x: -5800px;
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
-                    -webkit-filter: blur(3px);
-                    filter: blur(3px);
-                }
-            }
-
-            @keyframes rotatePopcorn {
-                0% {
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                    -webkit-filter: blur(0px);
-                    filter: blur(0px);
-                }
-
-                70% {
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                    -webkit-filter: blur(0px);
-                    filter: blur(0px);
-                }
-
-                100% {
-                    background-position-x: -5800px;
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
-                    -webkit-filter: blur(3px);
-                    filter: blur(3px);
-                }
-            }
-
-            .pink {
+            .appearPink {
                 top: 15%;
                 left: -30%;
             }
@@ -482,59 +301,27 @@
                 background-image: url(http://kjeks.de/wp-content/uploads/2021/04/pinkM.png);
                 background-repeat: no-repeat;
                 background-position: left;
-                -webkit-animation: rotatePink 750ms steps(29) 1 forwards,
-                    float 4s infinite 2.5s linear alternate;
-                animation: rotatePink 750ms steps(29) 1 forwards,
-                    float 4s infinite 2.5s linear alternate;
-            }
-
-            @-webkit-keyframes rotatePink {
-                0% {
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                    -webkit-filter: blur(0px);
-                    filter: blur(0px);
-                }
-
-                70% {
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                    -webkit-filter: blur(0px);
-                    filter: blur(0px);
-                }
-
-                100% {
-                    background-position-x: -7250px;
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="1" /></filter></svg>#filter');
-                    -webkit-filter: blur(1px);
-                    filter: blur(1px);
-                }
+                animation: rotatePink 750ms steps(29) 1 forwards;
             }
 
             @keyframes rotatePink {
                 0% {
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                    -webkit-filter: blur(0px);
                     filter: blur(0px);
                 }
 
                 70% {
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-                    -webkit-filter: blur(0px);
                     filter: blur(0px);
                 }
 
                 100% {
                     background-position-x: -7250px;
-                    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="1" /></filter></svg>#filter');
-                    -webkit-filter: blur(1px);
                     filter: blur(1px);
                 }
             }
 
-            .cake {
-                display: none;
-            }
+            /* Peanut */
 
-            .peanut {
+            .appearPeanut {
                 top: 70%;
                 left: 0%;
             }
@@ -545,16 +332,7 @@
                 background-image: url(http://kjeks.de/wp-content/uploads/2021/04/peanutM.png);
                 background-repeat: no-repeat;
                 background-position: left;
-                -webkit-animation: rotatePeanut 750ms steps(30) 1 forwards,
-                    float 4s infinite 1s linear alternate;
-                animation: rotatePeanut 750ms steps(30) 1 forwards,
-                    float 4s infinite 1s linear alternate;
-            }
-
-            @-webkit-keyframes rotatePeanut {
-                100% {
-                    background-position-x: -6300px;
-                }
+                animation: rotatePeanut 750ms steps(30) 1 forwards;
             }
 
             @keyframes rotatePeanut {
@@ -563,7 +341,72 @@
                 }
             }
 
-            .oreo {
+
+            /* Popcorn */
+
+            .appearPopcorn {
+                bottom: -5%;
+                left: 65%;
+            }
+
+            .popcorn {
+                height: 186px;
+                width: 200px;
+                background-image: url(http://kjeks.de/wp-content/uploads/2021/04/popcornM.png);
+                background-repeat: no-repeat;
+                background-position: left;
+                animation: rotatePopcorn 750ms steps(29) 1 forwards;
+            }
+
+            @keyframes rotatePopcorn {
+                0% {
+                    filter: blur(0px);
+                }
+
+                70% {
+                    filter: blur(0px);
+                }
+
+                100% {
+                    background-position-x: -5800px;
+                    filter: blur(3px);
+                }
+            }
+
+            /* White */
+
+            .appearWhite {
+                right: -5%;
+                top: -5%;
+            }
+
+            .white {
+                height: 194px;
+                width: 200px;
+                background-image: url(http://kjeks.de/wp-content/uploads/2021/04/whiteM.png);
+                background-repeat: no-repeat;
+                background-position: left;
+                animation: rotateWhite 750ms steps(30) 1 forwards;
+            }
+
+            @keyframes rotateWhite {
+                0% {
+                    filter: blur(0px);
+                }
+
+                70% {
+                    filter: blur(0px);
+                }
+
+                100% {
+                    background-position-x: -6000px;
+                    filter: blur(3px);
+                }
+            }
+
+            /* Oreo */
+
+            .appearOreo {
                 right: -10%;
                 top: 30%;
             }
@@ -574,16 +417,7 @@
                 background-image: url(http://kjeks.de/wp-content/uploads/2021/04/oreoM.png);
                 background-repeat: no-repeat;
                 background-position: left;
-                -webkit-animation: rotateOreo 750ms steps(29) 1 forwards,
-                    float 4s infinite 2s linear alternate;
-                animation: rotateOreo 750ms steps(29) 1 forwards,
-                    float 4s infinite 2s linear alternate;
-            }
-
-            @-webkit-keyframes rotateOreo {
-                100% {
-                    background-position-x: -6815px;
-                }
+                animation: rotateOreo 750ms steps(29) 1 forwards;
             }
 
             @keyframes rotateOreo {
@@ -592,38 +426,10 @@
                 }
             }
 
-            @-webkit-keyframes float {
-                0% {
-                    -webkit-transform: translateY(0%);
-                    transform: translateY(0%);
-                }
+            /* Cake */
 
-                50% {
-                    -webkit-transform: translateY(-4%);
-                    transform: translateY(-4%);
-                }
-
-                100% {
-                    -webkit-transform: translateY(4%);
-                    transform: translateY(4%);
-                }
-            }
-
-            @keyframes float {
-                0% {
-                    -webkit-transform: translateY(0%);
-                    transform: translateY(0%);
-                }
-
-                50% {
-                    -webkit-transform: translateY(-4%);
-                    transform: translateY(-4%);
-                }
-
-                100% {
-                    -webkit-transform: translateY(4%);
-                    transform: translateY(4%);
-                }
+            .cake {
+                display: none;
             }
         }
     </style>
@@ -631,8 +437,10 @@
 
 <body>
     <div class="screen">
-        <div class="oreo">
+        <div class="appearOreo">
+            <div class="oreo">
 
+            </div>
         </div>
 
         <div class="appearPeanut">
@@ -641,20 +449,31 @@
             </div>
         </div>
 
-        <div class="cake">
+        <div class="appearCake">
+            <div class="cake">
 
+            </div>
         </div>
 
-        <div class="pink">
 
+        <div class="appearPink">
+            <div class="pink">
+
+            </div>
         </div>
 
-        <div class="popcorn">
 
+        <div class="appearPopcorn">
+            <div class="popcorn">
+
+            </div>
         </div>
 
-        <div class="white">
 
+        <div class="appearWhite">
+            <div class="white">
+
+            </div>
         </div>
     </div>
 </body>
